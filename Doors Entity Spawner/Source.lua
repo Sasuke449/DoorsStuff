@@ -268,6 +268,7 @@ Creator.runEntity = function(entity)
                         Connections[entity.Model].Movement:Disconnect()
                         Connections[entity.Model].Drag:Disconnect()
                         entity.Model:SetAttribute("StopMovement", true)
+                    end
 
                     -- Killing
         
