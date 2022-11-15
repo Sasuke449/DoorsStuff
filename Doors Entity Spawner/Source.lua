@@ -122,9 +122,7 @@ local function destroy(entityTable)
 end
 
 local function shouldDeflect()
-    if workspace:FindFirstChild("Doggo") then
-        return true
-    elseif Char:FindFirstChild("Crucifix") then
+    if Char:FindFirstChild("Crucifix") then
         return true
     end
 
