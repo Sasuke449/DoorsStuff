@@ -262,38 +262,12 @@ Creator.runEntity = function(entity)
                 if (Root.Position - entity.Model.PrimaryPart.Position).Magnitude <= entity.Config.KillRange then
                     -- Entity deflection
                     
-                    local doggo = workspace:FindFirstChild("Doggo")
                     local crucifix = Char:FindFirstChild("Crucifix")
                     
-                    if doggo or crucifix then
+                    if crucifix then
                         Connections[entity.Model].Movement:Disconnect()
                         Connections[entity.Model].Drag:Disconnect()
                         entity.Model:SetAttribute("StopMovement", true)
-
-                        if doggo then
-                            doggo.Growl:Play()
-                            
-                            -- Repent
-
-                            local nodeIdx, nearest = nil, math.huge
-
-                            for i, v in next, nodes do
-                                local dist = (v.Position - entityPos).Magnitude
-
-                                if dist < nearest then
-                                    nodeIdx, nearest = i, dist
-                                end
-                            end
-
-                            for i = nodeIdx, 1, -1 do
-                                drag(entity.Model, nodes[i].Position + Vector3.new(0, 3.5 + entity.Config.HeightOffset, 0), entity.Config.Speed)
-                            end
-
-                            destroy(entity)
-
-                            return
-                        end
-                    end
 
                     -- Killing
         
