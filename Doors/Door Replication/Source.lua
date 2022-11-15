@@ -12,7 +12,7 @@ local Hum = Char:WaitForChild("Humanoid")
 local Root = Char:WaitForChild("HumanoidRootPart")
 
 local SelfModules = {
-    Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))(),
+    Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/Sasuke449/DoorsStuff/main/Functions.lua"))(),
 }
 
 local Assets = {

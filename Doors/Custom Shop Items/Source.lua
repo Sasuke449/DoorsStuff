@@ -9,7 +9,7 @@ local Plr = Players.LocalPlayer
 
 local SelfModules = {
     UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/UI.lua"))(),
-    Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))(),
+    Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/Sasuke449/DoorsStuff/main/Functions.lua"))(),
 }
 
 local BlacklistedNames = {"Crucifix", "Skeleton Key", "M249"}
