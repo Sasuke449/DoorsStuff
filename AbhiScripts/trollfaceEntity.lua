@@ -1,3 +1,10 @@
+-- Run this script ingame in the game then press T to spawn trollface, have fun :)
+
+
+-- Some Services
+local UserInputService = game:GetService("UserInputService")
+
+
 local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/Sasuke449/DoorsStuff/main/Doors%20Entity%20Spawner/Source.lua"))()
 
 
@@ -8,7 +15,7 @@ local entity = Creator.createEntity({
     DelayTime = 3,
     HeightOffset = 0,
     CanKill = true,
-    KillRange = 50,
+    KillRange = 10,
     BreakLights = false,
     BackwardsMovement = true,
     FlickerLights = {
@@ -26,7 +33,7 @@ local entity = Creator.createEntity({
         100, -- Shake start distance (from Entity to you)
     },
     Jumpscare = {
-        true, -- Enabled/Disabled
+        false, -- Enabled/Disabled
         {
             Image1 = "rbxassetid://10483855823", -- Image1 url
             Image2 = "rbxassetid://10483999903", -- Image2 url
@@ -53,4 +60,13 @@ local entity = Creator.createEntity({
     CustomDialog = {"Oh no", "You died to...", "Troll", "*Sniff balls*"},
 })
 
-Creator.runEntity(entity)
+
+local function onInputEnded(inputObject, gameProcessedEvent)
+	if gameProcessedEvent then return end
+	if inputObject.UserInputType == Enum.UserInputType.Keyboard and inputObject.KeyCode.Name == "T" then
+        print("Spawning TrollFace")
+		Creator.runEntity(entity)
+	end
+end
+
+UserInputService.InputEnded:Connect(onInputEnded)
